@@ -11,6 +11,6 @@
 Дата выпуска: 26.09.2021 
 
 ## Скриншоты
-<img src="https://github.com/hellbeemzk/noteApp-focusstart/blob/main/noteApp/Images/List.png" alt="[AppScreenshoteiOS]" align="center" width="200"/> <img src="https://github.com/hellbeemzk/noteApp-focusstart/blob/main/noteApp/Images/Note.png" alt="[AddNoteScreenshoteiOS]" align="center" width="200"/>
+<img src="https://github.com/hellbeemzk/noteApp-focusstart/blob/main/noteApp/Images/List.png" alt="[AppScreenshoteiOS]" align="center" width="250"/> <img src="https://github.com/hellbeemzk/noteApp-focusstart/blob/main/noteApp/Images/Note.png" alt="[AddNoteScreenshoteiOS]" align="center" width="250"/>
 
 
