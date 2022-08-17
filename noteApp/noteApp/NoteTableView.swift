@@ -10,7 +10,6 @@ import CoreData
 
 var noteList = [Note]()
 
-
 class NoteTableView: UITableViewController {
     var firstLoad = true
     
@@ -23,7 +22,6 @@ class NoteTableView: UITableViewController {
         }
         return noDeleteNoteList
     }
-    
     
     override func viewDidLoad() {
         if(firstLoad) {
@@ -44,16 +42,12 @@ class NoteTableView: UITableViewController {
         }
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let noteCell = tableView.dequeueReusableCell(withIdentifier: "noteCellID", for: indexPath) as! NoteCell
-
         let thisNote: Note!
         thisNote = nonDeletedNotes()[indexPath.row]
-        
         noteCell.titleLabel.text = thisNote.title
         noteCell.descLabel.text = thisNote.desc
-        
         return noteCell
     }
     
@@ -83,5 +77,4 @@ class NoteTableView: UITableViewController {
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
-    
 }

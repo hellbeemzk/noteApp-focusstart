@@ -8,11 +8,6 @@
 import Foundation
 import UIKit
 
-extension UIButton {
-    func roundingButton() {
-    }
-}
-
 extension UserDefaults {
     var isFirstLaunch: Bool {
         get {

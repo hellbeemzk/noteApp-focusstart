@@ -16,9 +16,7 @@ class NoteDetail: UIViewController {
     @IBOutlet weak var italicFontButton: UIButton!
     @IBOutlet weak var redColorFontButton: UIButton!
     
-    
     var selectedNote: Note? = nil
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +24,11 @@ class NoteDetail: UIViewController {
             titleTF.text = selectedNote?.title
             descTV.text = selectedNote?.desc
         }
-        
-        boldFontButton.roundingButton()
-        redColorFontButton.roundingButton()
-        italicFontButton.roundingButton()
     }
 
-    var isBold = false
-    var isItalic = false
-    var isRed = false
-    
+    private var isBold = false
+    private var isItalic = false
+    private var isRed = false
     
     @IBAction func onBoldButtonPressed(_ sender: UIButton) {
         if isBold {
@@ -46,7 +39,6 @@ class NoteDetail: UIViewController {
             isBold = true
         }
     }
-    
     
     @IBAction func onItalicButtonPressed(_ sender: UIButton) {
         if isItalic == false && isBold == false {
@@ -67,7 +59,6 @@ class NoteDetail: UIViewController {
             isBold = true
         }
     }
-    
     
     @IBAction func onRedColorButtonPressed(_ sender: Any) {
         if isRed {
@@ -114,11 +105,9 @@ class NoteDetail: UIViewController {
         }
     }
     
-    
     @IBAction func DeleteNote(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         do {
             let results:NSArray = try context.fetch(request) as NSArray
@@ -134,5 +123,4 @@ class NoteDetail: UIViewController {
             print("Fetch Failed")
         }
     }
-    
 }

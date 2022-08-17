@@ -13,9 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         self.handleFirstLaunch()
-        
         return true
     }
     
@@ -26,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func addFirstNote() {
         
         guard UserDefaults.standard.isFirstLaunch == false else { return }
-        
         let application = UIApplication.shared.delegate as! AppDelegate
         let firstNote = Note(context: context)
         firstNote.title = "First Note Example"
@@ -35,9 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Should be displayed when the app is first loaded!
             """
         firstNote.deletedDate = nil
-        //noteList.append(firstNote)
         application.saveContext()
-        
         UserDefaults.standard.isFirstLaunch = true
     }
     
@@ -54,11 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
-        
         let container = NSPersistentContainer(name: "noteApp")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -73,13 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-                
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
-    
 }
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
