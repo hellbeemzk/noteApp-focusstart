@@ -68,21 +68,69 @@
 		B50316492700160B0010EBD4 /* noteApp */ = {
 			isa = PBXGroup;
 			children = (
-				B503164A2700160B0010EBD4 /* AppDelegate.swift */,
-				B503164C2700160B0010EBD4 /* SceneDelegate.swift */,
-				B5031667270027AC0010EBD4 /* Extension.swift */,
-				B503164E2700160B0010EBD4 /* NoteDetail.swift */,
-				B503166327001EEA0010EBD4 /* NoteTableView.swift */,
-				B50316502700160B0010EBD4 /* Main.storyboard */,
-				B5031665270025F80010EBD4 /* Note.swift */,
-				B503166127001ED40010EBD4 /* NoteCell.swift */,
-				B5557B3D28C1E73500B5F9CD /* CoreDataStorage.swift */,
+				B5D3441E28C238A900183918 /* Application */,
+				B5D3441F28C2391B00183918 /* FirstScreen */,
+				B5D3442028C2392800183918 /* DetailScreen */,
+				B5D3441B28C2385E00183918 /* Model */,
+				B5D3441D28C2387700183918 /* CoreDataService */,
+				B5D3441C28C2386D00183918 /* Extension */,
 				B50316562700160C0010EBD4 /* Assets.xcassets */,
+				B50316502700160B0010EBD4 /* Main.storyboard */,
 				B50316582700160C0010EBD4 /* LaunchScreen.storyboard */,
 				B503165B2700160C0010EBD4 /* Info.plist */,
-				B50316532700160B0010EBD4 /* noteApp.xcdatamodeld */,
 			);
 			path = noteApp;
+			sourceTree = "<group>";
+		};
+		B5D3441B28C2385E00183918 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5031665270025F80010EBD4 /* Note.swift */,
+				B503166127001ED40010EBD4 /* NoteCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5D3441C28C2386D00183918 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B5031667270027AC0010EBD4 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B5D3441D28C2387700183918 /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				B5557B3D28C1E73500B5F9CD /* CoreDataStorage.swift */,
+				B50316532700160B0010EBD4 /* noteApp.xcdatamodeld */,
+			);
+			path = CoreDataService;
+			sourceTree = "<group>";
+		};
+		B5D3441E28C238A900183918 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B503164A2700160B0010EBD4 /* AppDelegate.swift */,
+				B503164C2700160B0010EBD4 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B5D3441F28C2391B00183918 /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B503166327001EEA0010EBD4 /* NoteTableView.swift */,
+			);
+			path = FirstScreen;
+			sourceTree = "<group>";
+		};
+		B5D3442028C2392800183918 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B503164E2700160B0010EBD4 /* NoteDetail.swift */,
+			);
+			path = DetailScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

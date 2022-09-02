@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 extension UserDefaults {
     var isFirstLaunch: Bool {

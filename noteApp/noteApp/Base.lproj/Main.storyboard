@@ -63,11 +63,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Заметки" id="gih-L1-lEg">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="uzj-Vf-npK">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6VP-Kq-VyZ">
+                        <barButtonItem key="rightBarButtonItem" id="uzj-Vf-npK">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="6VP-Kq-VyZ">
                                 <rect key="frame" x="369" y="10" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" image="plus" catalog="system" backgroundImage="plus"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="newNote" id="9Yt-L9-sGy"/>
@@ -201,12 +200,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Детали заметки" id="yLh-pT-4cO">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="uFh-cn-Ik8">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Kgb-iJ-Pck">
+                        <barButtonItem key="rightBarButtonItem" id="uFh-cn-Ik8">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="Kgb-iJ-Pck">
                                 <rect key="frame" x="302" y="4" width="92" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Сохранить"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Сохранить">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="17"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="saveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1pl-8X-947"/>
                                 </connections>
@@ -215,10 +221,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="boldFontButton" destination="BSn-Dd-2GY" id="3Ji-lc-Uc2"/>
-                        <outlet property="descTV" destination="Lvu-R3-vUO" id="nPu-Yp-1Yo"/>
+                        <outlet property="descriptionNote" destination="Lvu-R3-vUO" id="nPu-Yp-1Yo"/>
                         <outlet property="italicFontButton" destination="RRI-dL-mkd" id="fEk-AV-e86"/>
                         <outlet property="redColorFontButton" destination="smb-mH-NqC" id="O4V-XG-CST"/>
-                        <outlet property="titleTF" destination="cyW-2z-u83" id="IaG-v5-0f0"/>
+                        <outlet property="titleNote" destination="cyW-2z-u83" id="IaG-v5-0f0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
