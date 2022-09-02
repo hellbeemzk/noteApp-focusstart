@@ -27,7 +27,7 @@ final class CoreDataStorage {
         return container
     }()
     
-    lazy var context = persistentContainer.viewContext
+    lazy var context = self.persistentContainer.viewContext
     
     // MARK: - Core Data Add First Note Method
     
@@ -39,7 +39,7 @@ final class CoreDataStorage {
                          According to the technical task from CFT
                          Should be displayed when the app is first loaded!
                          """
-        firstNote.id = getNotes().count - 1 as NSNumber
+        firstNote.id = self.getNotes().count - 1 as NSNumber
         self.saveContext()
         UserDefaults.standard.isFirstLaunch = true
     }
@@ -50,7 +50,7 @@ final class CoreDataStorage {
     func getNotes() -> [Note] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         do {
-            return try context.fetch(fetchRequest) as! [Note]
+            return try self.context.fetch(fetchRequest) as! [Note]
         } catch let error {
             print("Failed to fetch data", error)
             return []
@@ -62,7 +62,7 @@ final class CoreDataStorage {
         guard let newNote = NSManagedObject(entity: entity, insertInto: context) as? Note else { return }
         newNote.title = titleNote
         newNote.desc = descNote
-        newNote.id = getNotes().count - 1 as NSNumber
+        newNote.id = self.getNotes().count - 1 as NSNumber
         self.saveContext()
     }
     
@@ -72,7 +72,7 @@ final class CoreDataStorage {
     }
     
     func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = self.persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()

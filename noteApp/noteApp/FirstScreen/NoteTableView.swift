@@ -39,13 +39,13 @@ final class NoteTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return getNonDeletedNotes().count
+        return self.getNonDeletedNotes().count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let noteCell = tableView.dequeueReusableCell(withIdentifier: "noteCellID", for: indexPath) as! NoteCell
         let thisNote: Note!
-        thisNote = getNonDeletedNotes()[indexPath.row]
+        thisNote = self.getNonDeletedNotes()[indexPath.row]
         noteCell.titleLabel.text = thisNote.title
         noteCell.descLabel.text = thisNote.desc
         return noteCell
@@ -57,11 +57,11 @@ final class NoteTableView: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editNote" {
-            let indexPath = tableView.indexPathForSelectedRow!
+            let indexPath = self.tableView.indexPathForSelectedRow!
             let noteDetail = segue.destination as? NoteDetail
-            let selectedNote = getNonDeletedNotes()[indexPath.row]
+            let selectedNote = self.getNonDeletedNotes()[indexPath.row]
             noteDetail?.selectedNote = selectedNote
-            tableView.deselectRow(at: indexPath, animated: true)
+            self.tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }

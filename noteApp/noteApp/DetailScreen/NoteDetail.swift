@@ -39,46 +39,49 @@ final class NoteDetail: UIViewController {
     }
     
     @IBAction func onBoldButtonPressed(_ sender: UIButton) {
-        descriptionNote.font = isBold ? UIFont(name: "Helvetica Neue", size: 14) : UIFont(name: "Helvetica Neue Bold", size: 14)
+        self.descriptionNote.font = isBold ? UIFont(name: "Helvetica Neue", size: 14) :
+                                             UIFont(name: "Helvetica Neue Bold", size: 14)
         isBold.toggle()
     }
 
     @IBAction func onItalicButtonPressed(_ sender: UIButton) {
         switch (isBold, isItalic) {
         case (false, false):
-            descriptionNote.font = UIFont(name: "Helvetica Neue", size: 14)
+            self.descriptionNote.font = UIFont(name: "Helvetica Neue", size: 14)
             isItalic.toggle()
         case (false, true):
-            descriptionNote.font = UIFont(name: "Helvetica Neue Italic", size: 14)
+            self.descriptionNote.font = UIFont(name: "Helvetica Neue Italic", size: 14)
             isItalic.toggle()
         case (true, true):
-            descriptionNote.font = UIFont(name: "Helvetica Neue Bold Italic", size: 14)
+            self.descriptionNote.font = UIFont(name: "Helvetica Neue Bold Italic", size: 14)
             isItalic.toggle()
         case (true, false):
-            descriptionNote.font = UIFont(name: "Helvetica Neue Bold", size: 14)
+            self.descriptionNote.font = UIFont(name: "Helvetica Neue Bold", size: 14)
             isItalic.toggle()
         }
     }
     
     @IBAction func onRedColorButtonPressed(_ sender: Any) {
-        descriptionNote.textColor = isRed ? .black : .red
+        self.descriptionNote.textColor = isRed ? .black : .red
         isRed.toggle()
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        if selectedNote == nil {
-            guard let title = titleNote.text, title != "", let desc = descriptionNote.text, desc != "" else {
+        if self.selectedNote == nil {
+            guard let title = self.titleNote.text, title != "",
+                  let desc = self.descriptionNote.text, desc != ""
+            else {
                 self.showAlert()
                 return
             }
-            dataStorage.saveNote(titleNote: title, descNote: desc)
+            self.dataStorage.saveNote(titleNote: title, descNote: desc)
             navigationController?.popViewController(animated: true)
         } else {
-            let results = dataStorage.getNotes()
+            let results = self.dataStorage.getNotes()
             for resultNote in results {
-                if resultNote == selectedNote {
-                    resultNote.title = titleNote.text
-                    resultNote.desc = descriptionNote.text
+                if resultNote == self.selectedNote {
+                    resultNote.title = self.titleNote.text
+                    resultNote.desc = self.descriptionNote.text
                     navigationController?.popViewController(animated: true)
                 }
             }
@@ -86,8 +89,8 @@ final class NoteDetail: UIViewController {
     }
     
     @IBAction func deleteNote(_ sender: Any) {
-        guard let selectedNote = selectedNote else { return }
-        dataStorage.deleteNote(note: selectedNote)
+        guard let selectedNote = self.selectedNote else { return }
+        self.dataStorage.deleteNote(note: selectedNote)
         navigationController?.popViewController(animated: true)
     }
     
