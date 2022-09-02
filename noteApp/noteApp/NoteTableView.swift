@@ -8,10 +8,15 @@
 import UIKit
 import CoreData
 
-var noteList = [Note]()
+//lazy var noteList = CoreDataStorage.shared.getNotes()
+//var noteList = [Note]()
 
 class NoteTableView: UITableViewController {
     var firstLoad = true
+    var dataStorage = CoreDataStorage.shared
+    
+    lazy var noteList = CoreDataStorage.shared.getNotes()
+//    var noteList = [Note]()
     
     func nonDeletedNotes() -> [Note] {
         var noDeleteNoteList = [Note]()
@@ -23,24 +28,40 @@ class NoteTableView: UITableViewController {
         return noDeleteNoteList
     }
     
+    
     override func viewDidLoad() {
         if(firstLoad) {
             firstLoad = false
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
-            do {
-                let results:NSArray = try context.fetch(request) as NSArray
-                for result in results
-                {
-                    let note = result as! Note
-                    noteList.append(note)
-                }
-            } catch {
-                print("Fetch Failed")
-            }
+            dataStorage.addFirstNote()
         }
     }
+    
+//    override func viewWillAppear(_ animated: Bool) { // не помогло
+//        super.viewWillAppear(animated)
+//        tableView.reloadData()
+//    }
+
+//        }
+
+    
+//    override func viewDidLoad() {
+//        if(firstLoad) {
+//            firstLoad = false
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+//            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+//            do {
+//                let results:NSArray = try context.fetch(request) as NSArray
+//                for result in results
+//                {
+//                    let note = result as! Note
+//                    noteList.append(note)
+//                }
+//            } catch {
+//                print("Fetch Failed")
+//            }
+//        }
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let noteCell = tableView.dequeueReusableCell(withIdentifier: "noteCellID", for: indexPath) as! NoteCell

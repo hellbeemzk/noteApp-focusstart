@@ -18,6 +18,7 @@
 		B503166427001EEA0010EBD4 /* NoteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503166327001EEA0010EBD4 /* NoteTableView.swift */; };
 		B5031666270025F80010EBD4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5031665270025F80010EBD4 /* Note.swift */; };
 		B5031668270027AC0010EBD4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5031667270027AC0010EBD4 /* Extension.swift */; };
+		B5557B3E28C1E73500B5F9CD /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5557B3D28C1E73500B5F9CD /* CoreDataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B503166327001EEA0010EBD4 /* NoteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableView.swift; sourceTree = "<group>"; };
 		B5031665270025F80010EBD4 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		B5031667270027AC0010EBD4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B5557B3D28C1E73500B5F9CD /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				B50316502700160B0010EBD4 /* Main.storyboard */,
 				B5031665270025F80010EBD4 /* Note.swift */,
 				B503166127001ED40010EBD4 /* NoteCell.swift */,
+				B5557B3D28C1E73500B5F9CD /* CoreDataStorage.swift */,
 				B50316562700160C0010EBD4 /* Assets.xcassets */,
 				B50316582700160C0010EBD4 /* LaunchScreen.storyboard */,
 				B503165B2700160C0010EBD4 /* Info.plist */,
@@ -155,6 +158,7 @@
 				B503164F2700160B0010EBD4 /* NoteDetail.swift in Sources */,
 				B503166427001EEA0010EBD4 /* NoteTableView.swift in Sources */,
 				B5031666270025F80010EBD4 /* Note.swift in Sources */,
+				B5557B3E28C1E73500B5F9CD /* CoreDataStorage.swift in Sources */,
 				B503164B2700160B0010EBD4 /* AppDelegate.swift in Sources */,
 				B503166227001ED40010EBD4 /* NoteCell.swift in Sources */,
 				B503164D2700160B0010EBD4 /* SceneDelegate.swift in Sources */,
