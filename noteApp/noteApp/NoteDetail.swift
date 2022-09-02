@@ -81,8 +81,8 @@ class NoteDetail: UIViewController {
             
 //            let newNote = Note()
 //            newNote.id = 0
-//            selectedNote?.title = titleTF.text
-//            selectedNote?.desc = descTV.text
+//            newNote.title = titleTF.text
+//            newNote.desc = descTV.text
 //            do {
             dataStorage.saveNote(titleNote: titleTF.text ?? "", titleDesc: descTV.text ?? "")
 //                noteList.append(newNote)

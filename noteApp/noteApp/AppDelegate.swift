@@ -13,13 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.handleFirstLaunch()
+//        self.handleFirstLaunch()
         return true
     }
     
-    private func handleFirstLaunch() {
+//    private func handleFirstLaunch() {
 //        self.addFirstNote()
-    }
+//    }
     
 //    private func addFirstNote() {
 //

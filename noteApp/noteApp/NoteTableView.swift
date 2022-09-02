@@ -10,13 +10,19 @@ import CoreData
 
 //lazy var noteList = CoreDataStorage.shared.getNotes()
 //var noteList = [Note]()
+//var noteList = CoreDataStorage.shared.getNotes()
 
 class NoteTableView: UITableViewController {
     var firstLoad = true
     var dataStorage = CoreDataStorage.shared
     
-    lazy var noteList = CoreDataStorage.shared.getNotes()
+//    lazy var noteList = CoreDataStorage.shared.getNotes()
+    
 //    var noteList = [Note]()
+//    var noteList = CoreDataStorage.shared.getNotes()
+    var noteList: [Note] {
+        CoreDataStorage.shared.getNotes()
+    }
     
     func nonDeletedNotes() -> [Note] {
         var noDeleteNoteList = [Note]()
@@ -36,10 +42,11 @@ class NoteTableView: UITableViewController {
         }
     }
     
-//    override func viewWillAppear(_ animated: Bool) { // не помогло
+    override func viewWillAppear(_ animated: Bool) { // не помогло
 //        super.viewWillAppear(animated)
-//        tableView.reloadData()
-//    }
+//        noteList = CoreDataStorage.shared.getNotes()
+        tableView.reloadData()
+    }
 
 //        }
 
